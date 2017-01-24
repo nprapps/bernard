@@ -1,8 +1,8 @@
-# bernard
+# Bernard
 
 ## What is this?
 
-**TKTK: Describe bernard here.**
+**Bernard is a Slack webhook setup as cron job that retrieves all new rules, proposed rules, and presidential documents from the Federal Register.**
 
 ## Assumptions
 
