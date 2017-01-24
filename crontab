@@ -1,1 +1,1 @@
-10 17 * * * ubuntu /bin/bash /home/ubuntu/apps/bernard/repository/run_on_server.sh fab $DEPLOYMENT_TARGET cron_jobs.post_message >> /var/log/bernard/crontab.log 2>&1
+17 22 * * * ubuntu /bin/bash /home/ubuntu/apps/bernard/repository/run_on_server.sh fab $DEPLOYMENT_TARGET cron_jobs.post_message >> /var/log/bernard/crontab.log 2>&1
