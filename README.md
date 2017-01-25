@@ -2,14 +2,15 @@
 
 ## What is this?
 
-**Bernard is a Slack webhook setup as cron job that retrieves all new rules, proposed rules, and presidential documents from the Federal Register.**
+**Bernard is a Slack incoming webhook setup as a cron job that retrieves all new rules, proposed rules, and presidential documents from the Federal Register. This repo will provide the infrastructure to setup a cron job on an Ubuntu server.**
+
+It is named after Bernard Kennedy, the first director of the Federal Register.
 
 ## Assumptions
 
 The following things are assumed to be true in this documentation.
 
-* You are running OSX.
-* You are using Python 2.7. (Probably the version that came OSX.)
+* You are using Python 2.7.
 * You have [virtualenv](https://pypi.python.org/pypi/virtualenv) and [virtualenvwrapper](https://pypi.python.org/pypi/virtualenvwrapper) installed and working.
 
 For more details our stack, see our [development environment blog post](http://blog.apps.npr.org/2013/06/06/how-to-setup-a-developers-environment.html).
@@ -34,9 +35,13 @@ pip install -r requirements.txt
 
 ## Hide project secrets
 
-Project secrets should **never** be stored in ``app_config.py`` or anywhere else in the repository. They will be leaked to the client if you do. Instead, always store passwords, keys, etc. in environment variables and document that they are needed here in the README.
+Project secrets should **never** be stored in ``app_config.py`` or anywhere else in the repository. Instead, always store passwords, keys, etc. in environment variables and document that they are needed here in the README.
 
 Any environment variable that starts with ``$PROJECT_SLUG_`` will be automatically loaded when ``app_config.get_secrets()`` is called.
+
+## Connecting to Slack
+
+To connect Bernard to your Slack, you will need to create an [incoming webhook](https://api.slack.com/incoming-webhooks) and copy the webhook endpoint to an environment variable called `bernard_WEBHOOK`.
 
 ## Deploy to EC2
 
